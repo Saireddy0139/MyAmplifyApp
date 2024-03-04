@@ -145,7 +145,12 @@ export default function UserDetailsUpdateForm(props) {
       {...rest}
     >
       <TextField
-        label="Email"
+        label={
+          <span style={{ display: "inline-flex" }}>
+            <span>Email</span>
+            <span style={{ color: "red" }}>*</span>
+          </span>
+        }
         isRequired={true}
         isReadOnly={false}
         value={email}
@@ -171,7 +176,12 @@ export default function UserDetailsUpdateForm(props) {
         {...getOverrideProps(overrides, "email")}
       ></TextField>
       <TextField
-        label="Password"
+        label={
+          <span style={{ display: "inline-flex" }}>
+            <span>Password</span>
+            <span style={{ color: "red" }}>*</span>
+          </span>
+        }
         isRequired={true}
         isReadOnly={false}
         value={password}
@@ -197,7 +207,12 @@ export default function UserDetailsUpdateForm(props) {
         {...getOverrideProps(overrides, "password")}
       ></TextField>
       <TextField
-        label="Name"
+        label={
+          <span style={{ display: "inline-flex" }}>
+            <span>Name</span>
+            <span style={{ color: "red" }}>*</span>
+          </span>
+        }
         isRequired={true}
         isReadOnly={false}
         value={name}
