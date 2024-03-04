@@ -16,7 +16,13 @@
         "MyFirstApp": {}
       },
       "function": {
-        "myfirstapp33e498f7": {}
+        "myfirstapp33e498f7": {
+          "deploymentBucketName": "amplify-myfirstapp-staging-90656-deployment",
+          "s3Key": "amplify-builds/myfirstapp33e498f7-504971665346542b7853-build.zip"
+        }
+      },
+      "api": {
+        "MyFirstApp": {}
       }
     }
   }

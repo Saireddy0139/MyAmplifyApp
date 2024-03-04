@@ -74,5 +74,23 @@
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     }
+  },
+  "parameters": {
+    "AMPLIFY_function_myfirstapp33e498f7_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "myfirstapp33e498f7"
+        }
+      ]
+    },
+    "AMPLIFY_function_myfirstapp33e498f7_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "myfirstapp33e498f7"
+        }
+      ]
+    }
   }
 }
