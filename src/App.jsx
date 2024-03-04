@@ -13,16 +13,17 @@ function App() {
  
   return (
    
-    <Authenticator   >
-      {/* <View textAlign="center" >
-          <Image
-            alt="Company Logo"
-            src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=432,fit=crop,q=95/mxBjreBL9ZfB5Gob/microsoftteams-image-d95Dp2xwZMSOW8bQ.png" // Replace with your company logo URL
-            width={100} // Adjust width as needed
-          />
-        </View> */}
-    {({ signOut }) => <button textAlign="center" onClick={signOut}>Sign out</button>}
-  </Authenticator>
+   
+    <nav className="navbar bg-dark">
+    <div className="container-fluid">
+        <span className="appName">
+            CloudXcel User Authentication</span>
+            <button  onClick={signOut}>Sign out</button>
+    </div>
+</nav>
+    
+    
+
   );
 }
 
