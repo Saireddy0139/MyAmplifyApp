@@ -5,6 +5,6 @@
  **************************************************************************/
 
 export { default as NewForm1 } from "./NewForm1";
-export { default as UserDetailsCreateForm } from "./UserDetailsCreateForm";
-export { default as UserDetailsUpdateForm } from "./UserDetailsUpdateForm";
+export { default as UserdetasilsCreateForm } from "./UserdetasilsCreateForm";
+export { default as UserdetasilsUpdateForm } from "./UserdetasilsUpdateForm";
 export { default as studioTheme } from "./studioTheme";
