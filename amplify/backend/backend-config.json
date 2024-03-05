@@ -6,15 +6,16 @@
         "authConfig": {
           "additionalAuthenticationProviders": [
             {
-              "authenticationType": "AWS_IAM"
+              "apiKeyConfig": {
+                "apiKeyExpirationDate": "2024-03-12T09:52:53.880Z",
+                "apiKeyExpirationDays": 7,
+                "description": ""
+              },
+              "authenticationType": "API_KEY"
             }
           ],
           "defaultAuthentication": {
-            "apiKeyConfig": {
-              "apiKeyExpirationDays": 30,
-              "description": "api key description"
-            },
-            "authenticationType": "API_KEY"
+            "authenticationType": "AWS_IAM"
           }
         }
       },
@@ -68,6 +69,24 @@
       ],
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_myfirstapp33e498f7_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "myfirstapp33e498f7"
+        }
+      ]
+    },
+    "AMPLIFY_function_myfirstapp33e498f7_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "myfirstapp33e498f7"
+        }
+      ]
     }
   },
   "storage": {
