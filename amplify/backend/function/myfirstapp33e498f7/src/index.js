@@ -78,8 +78,8 @@ exports.handler = async (event, context) => {
         body: JSON.stringify('Hello from Lambda!'),
     };
 };
-  return {
-    ...response,
-    body: JSON.stringify(response.body),
-  };
+  // return {
+  //   ...response,
+  //   body: JSON.stringify(response.body),
+  // };
 };
