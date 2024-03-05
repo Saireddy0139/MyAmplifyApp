@@ -1,31 +1,31 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const getUserDetails = /* GraphQL */ `
-  query GetUserDetails($id: ID!) {
-    getUserDetails(id: $id) {
+export const getUserdetasils = /* GraphQL */ `
+  query GetUserdetasils($id: ID!) {
+    getUserdetasils(id: $id) {
       id
       email
+      username
       password
-      name
       createdAt
       updatedAt
       __typename
     }
   }
 `;
-export const listUserDetails = /* GraphQL */ `
-  query ListUserDetails(
-    $filter: ModelUserDetailsFilterInput
+export const listUserdetasils = /* GraphQL */ `
+  query ListUserdetasils(
+    $filter: ModelUserdetasilsFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listUserDetails(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listUserdetasils(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
         email
+        username
         password
-        name
         createdAt
         updatedAt
         __typename

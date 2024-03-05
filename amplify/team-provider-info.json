@@ -9,16 +9,36 @@
       "UnauthRoleName": "amplify-myfirstapp-staging-90656-unauthRole",
       "StackName": "amplify-myfirstapp-staging-90656",
       "StackId": "arn:aws:cloudformation:ap-south-1:533267218482:stack/amplify-myfirstapp-staging-90656/e342b710-d6e1-11ee-8fa3-02bca21d7329",
-      "AmplifyAppId": "d2gjwckbfg0s3a"
+      "AmplifyAppId": "d2gjwckbfg0s3a",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-myfirstapp-staging-90656-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
     },
     "categories": {
       "auth": {
-        "MyFirstApp": {}
+        "MyFirstApp": {
+          "facebookAppId": "1994615860941037",
+          "googleClientId": "148482439072-32jdbr28qg3p6v7f7500q4u0urmhmm33.apps.googleusercontent.com",
+          "amazonAppId": "amzn1.application-oa2-client.be7e30744e164fd8b2b344d57afb4e66"
+        },
+        "userPoolGroups": {}
       },
       "function": {
         "myfirstapp33e498f7": {
           "deploymentBucketName": "amplify-myfirstapp-staging-90656-deployment",
           "s3Key": "amplify-builds/myfirstapp33e498f7-5279634f4f3553376b31-build.zip"
+        },
+        "MyFirstAppPreAuthentication": {
+          "deploymentBucketName": "amplify-myfirstapp-staging-90656-deployment",
+          "s3Key": "amplify-builds/MyFirstAppPreAuthentication-6c4359486d2f6842324d-build.zip"
+        },
+        "MyFirstAppPreSignup": {
+          "DOMAINALLOWLIST": "asai@icloudxcel.com",
+          "DOMAINDENYLIST": "asai@icloudxcel.com",
+          "deploymentBucketName": "amplify-myfirstapp-staging-90656-deployment",
+          "s3Key": "amplify-builds/MyFirstAppPreSignup-384c467569305669744f-build.zip"
+        },
+        "MyFirstAppVerifyAuthChallengeResponse": {
+          "deploymentBucketName": "amplify-myfirstapp-staging-90656-deployment",
+          "s3Key": "amplify-builds/MyFirstAppVerifyAuthChallengeResponse-33353757766c65523630-build.zip"
         }
       },
       "api": {

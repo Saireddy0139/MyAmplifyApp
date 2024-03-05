@@ -1,45 +1,45 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const onCreateUserDetails = /* GraphQL */ `
-  subscription OnCreateUserDetails(
-    $filter: ModelSubscriptionUserDetailsFilterInput
+export const onCreateUserdetasils = /* GraphQL */ `
+  subscription OnCreateUserdetasils(
+    $filter: ModelSubscriptionUserdetasilsFilterInput
   ) {
-    onCreateUserDetails(filter: $filter) {
+    onCreateUserdetasils(filter: $filter) {
       id
       email
+      username
       password
-      name
       createdAt
       updatedAt
       __typename
     }
   }
 `;
-export const onUpdateUserDetails = /* GraphQL */ `
-  subscription OnUpdateUserDetails(
-    $filter: ModelSubscriptionUserDetailsFilterInput
+export const onUpdateUserdetasils = /* GraphQL */ `
+  subscription OnUpdateUserdetasils(
+    $filter: ModelSubscriptionUserdetasilsFilterInput
   ) {
-    onUpdateUserDetails(filter: $filter) {
+    onUpdateUserdetasils(filter: $filter) {
       id
       email
+      username
       password
-      name
       createdAt
       updatedAt
       __typename
     }
   }
 `;
-export const onDeleteUserDetails = /* GraphQL */ `
-  subscription OnDeleteUserDetails(
-    $filter: ModelSubscriptionUserDetailsFilterInput
+export const onDeleteUserdetasils = /* GraphQL */ `
+  subscription OnDeleteUserdetasils(
+    $filter: ModelSubscriptionUserdetasilsFilterInput
   ) {
-    onDeleteUserDetails(filter: $filter) {
+    onDeleteUserdetasils(filter: $filter) {
       id
       email
+      username
       password
-      name
       createdAt
       updatedAt
       __typename

@@ -7,7 +7,7 @@
           "additionalAuthenticationProviders": [
             {
               "apiKeyConfig": {
-                "apiKeyExpirationDate": "2024-03-12T09:52:53.880Z",
+                "apiKeyExpirationDate": "2024-03-12T17:24:42.485Z",
                 "apiKeyExpirationDays": 7,
                 "description": ""
               },
@@ -26,7 +26,35 @@
   "auth": {
     "MyFirstApp": {
       "customAuth": false,
-      "dependsOn": [],
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn",
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "MyFirstAppPreAuthentication",
+          "triggerProvider": "Cognito"
+        },
+        {
+          "attributes": [
+            "Arn",
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "MyFirstAppPreSignup",
+          "triggerProvider": "Cognito"
+        },
+        {
+          "attributes": [
+            "Arn",
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "MyFirstAppVerifyAuthChallengeResponse",
+          "triggerProvider": "Cognito"
+        }
+      ],
       "frontendAuthConfig": {
         "mfaConfiguration": "OFF",
         "mfaTypes": [
@@ -51,9 +79,40 @@
       },
       "providerPlugin": "awscloudformation",
       "service": "Cognito"
+    },
+    "userPoolGroups": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId",
+            "AppClientIDWeb",
+            "AppClientID",
+            "IdentityPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "MyFirstApp"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito-UserPool-Groups"
     }
   },
   "function": {
+    "MyFirstAppPreAuthentication": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "MyFirstAppPreSignup": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "MyFirstAppVerifyAuthChallengeResponse": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
     "myfirstapp33e498f7": {
       "build": true,
       "dependsOn": [
@@ -72,6 +131,94 @@
     }
   },
   "parameters": {
+    "AMPLIFY_auth_MyFirstApp_amazonAppId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "MyFirstApp"
+        }
+      ]
+    },
+    "AMPLIFY_auth_MyFirstApp_facebookAppId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "MyFirstApp"
+        }
+      ]
+    },
+    "AMPLIFY_auth_MyFirstApp_googleClientId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "MyFirstApp"
+        }
+      ]
+    },
+    "AMPLIFY_function_MyFirstAppPreAuthentication_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "MyFirstAppPreAuthentication"
+        }
+      ]
+    },
+    "AMPLIFY_function_MyFirstAppPreAuthentication_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "MyFirstAppPreAuthentication"
+        }
+      ]
+    },
+    "AMPLIFY_function_MyFirstAppPreSignup_DOMAINALLOWLIST": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "MyFirstAppPreSignup"
+        }
+      ]
+    },
+    "AMPLIFY_function_MyFirstAppPreSignup_DOMAINDENYLIST": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "MyFirstAppPreSignup"
+        }
+      ]
+    },
+    "AMPLIFY_function_MyFirstAppPreSignup_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "MyFirstAppPreSignup"
+        }
+      ]
+    },
+    "AMPLIFY_function_MyFirstAppPreSignup_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "MyFirstAppPreSignup"
+        }
+      ]
+    },
+    "AMPLIFY_function_MyFirstAppVerifyAuthChallengeResponse_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "MyFirstAppVerifyAuthChallengeResponse"
+        }
+      ]
+    },
+    "AMPLIFY_function_MyFirstAppVerifyAuthChallengeResponse_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "MyFirstAppVerifyAuthChallengeResponse"
+        }
+      ]
+    },
     "AMPLIFY_function_myfirstapp33e498f7_deploymentBucketName": {
       "usedBy": [
         {

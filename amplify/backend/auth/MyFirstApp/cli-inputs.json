@@ -1,8 +1,8 @@
 {
   "version": "1",
   "cognitoConfig": {
-    "identityPoolName": "testAuthIdentityPool",
-    "allowUnauthenticatedIdentities": true,
+    "identityPoolName": "myfistapp",
+    "allowUnauthenticatedIdentities": false,
     "resourceNameTruncated": "myfirs478e5f8f",
     "userPoolName": "MyFirstApp",
     "autoVerifiedAttributes": [
@@ -23,10 +23,22 @@
     "aliasAttributes": [],
     "userpoolClientGenerateSecret": false,
     "userpoolClientRefreshTokenValidity": 30,
-    "userpoolClientWriteAttributes": [],
-    "userpoolClientReadAttributes": [],
+    "userpoolClientWriteAttributes": [
+      "email",
+      "locale",
+      "given_name"
+    ],
+    "userpoolClientReadAttributes": [
+      "email",
+      "gender",
+      "given_name",
+      "name",
+      "phone_number",
+      "preferred_username",
+      "email_verified"
+    ],
     "userpoolClientLambdaRole": "MyFirs478e5f8f_userpoolclient_lambda_role",
-    "userpoolClientSetAttributes": false,
+    "userpoolClientSetAttributes": true,
     "sharedId": "478e5f8f",
     "resourceName": "MyFirstApp",
     "authSelections": "identityPoolAndUserPool",
@@ -34,12 +46,14 @@
     "usernameAttributes": [
       "email"
     ],
-    "useDefault": "defaultSocial",
-    "userPoolGroups": false,
-    "userPoolGroupList": [],
+    "useDefault": "manual",
+    "userPoolGroups": true,
+    "userPoolGroupList": [
+      "myfirstapp"
+    ],
     "adminQueries": false,
     "hostedUI": true,
-    "hostedUIDomainName": "nz4cd08scvdz",
+    "hostedUIDomainName": "myfirstapp",
     "authProvidersUserPool": [
       "Facebook",
       "Google",
@@ -61,8 +75,57 @@
       ]
     },
     "breakCircularDependency": true,
-    "dependsOn": [],
-    "authProviders": [],
-    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"http://localhost:3000/\"],\"LogoutURLs\":[\"http://localhost:3000/\"]}"
+    "dependsOn": [
+      {
+        "category": "function",
+        "resourceName": "MyFirstAppPreAuthentication",
+        "triggerProvider": "Cognito",
+        "attributes": [
+          "Arn",
+          "Name"
+        ]
+      },
+      {
+        "category": "function",
+        "resourceName": "MyFirstAppPreSignup",
+        "triggerProvider": "Cognito",
+        "attributes": [
+          "Arn",
+          "Name"
+        ]
+      },
+      {
+        "category": "function",
+        "resourceName": "MyFirstAppVerifyAuthChallengeResponse",
+        "triggerProvider": "Cognito",
+        "attributes": [
+          "Arn",
+          "Name"
+        ]
+      }
+    ],
+    "triggers": {
+      "PreAuthentication": [
+        "custom"
+      ],
+      "PreSignup": [
+        "custom"
+      ],
+      "VerifyAuthChallengeResponse": [
+        "custom"
+      ]
+    },
+    "authProviders": [
+      "graph.facebook.com",
+      "accounts.google.com",
+      "www.amazon.com"
+    ],
+    "parentStack": {
+      "Ref": "AWS::StackId"
+    },
+    "authTriggerConnections": "[\n  {\n    \"triggerType\": \"PreAuthentication\",\n    \"lambdaFunctionName\": \"MyFirstAppPreAuthentication\"\n  },\n  {\n    \"triggerType\": \"PreSignUp\",\n    \"lambdaFunctionName\": \"MyFirstAppPreSignup\"\n  },\n  {\n    \"triggerType\": \"VerifyAuthChallengeResponse\",\n    \"lambdaFunctionName\": \"MyFirstAppVerifyAuthChallengeResponse\"\n  }\n]",
+    "permissions": [],
+    "thirdPartyAuth": true,
+    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"http://localhost:3000/\",\"http://localhost:3000/\"],\"LogoutURLs\":[\"http://localhost:3000/\"]}"
   }
 }

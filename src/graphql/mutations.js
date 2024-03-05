@@ -1,94 +1,51 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createUserDetails = /* GraphQL */ `
-  mutation CreateUserDetails(
-    $input: CreateUserDetailsInput!
-    $condition: ModelUserDetailsConditionInput
+export const createUserdetasils = /* GraphQL */ `
+  mutation CreateUserdetasils(
+    $input: CreateUserdetasilsInput!
+    $condition: ModelUserdetasilsConditionInput
   ) {
-    createUserDetails(input: $input, condition: $condition) {
+    createUserdetasils(input: $input, condition: $condition) {
       id
       email
+      username
       password
-      name
       createdAt
       updatedAt
       __typename
     }
   }
 `;
-export const updateUserDetails = /* GraphQL */ `
-  mutation UpdateUserDetails(
-    $input: UpdateUserDetailsInput!
-    $condition: ModelUserDetailsConditionInput
+export const updateUserdetasils = /* GraphQL */ `
+  mutation UpdateUserdetasils(
+    $input: UpdateUserdetasilsInput!
+    $condition: ModelUserdetasilsConditionInput
   ) {
-    updateUserDetails(input: $input, condition: $condition) {
+    updateUserdetasils(input: $input, condition: $condition) {
       id
       email
+      username
       password
-      name
       createdAt
       updatedAt
       __typename
     }
   }
 `;
-export const deleteUserDetails = /* GraphQL */ `
-  mutation DeleteUserDetails(
-    $input: DeleteUserDetailsInput!
-    $condition: ModelUserDetailsConditionInput
+export const deleteUserdetasils = /* GraphQL */ `
+  mutation DeleteUserdetasils(
+    $input: DeleteUserdetasilsInput!
+    $condition: ModelUserdetasilsConditionInput
   ) {
-    deleteUserDetails(input: $input, condition: $condition) {
+    deleteUserdetasils(input: $input, condition: $condition) {
       id
       email
+      username
       password
-      name
       createdAt
       updatedAt
       __typename
     }
- }
-  `;
-// import { generateClient } from "aws-amplify/api";
-// import { createUserdetasils } from './graphql/mutations';
-
-
-// import { generateClient } from "aws-amplify/api";
-// import { updateUserdetasils } from './graphql/mutations';
-
-// // const client = generateClient()
-
-
-// import { generateClient } from "aws-amplify/api";
-// import { deleteUserdetasils } from './graphql/mutations';
-
-// // const client = generateClient()
-// const client = generateClient()
-// const newUserdetasils = await client.graphql({
-//   query: createUserdetasils,
-//   variables: {
-//       input: {
-//   "email": "Lorem ipsum dolor sit amet",
-//   "username": "Lorem ipsum dolor sit amet",
-//   "password": "Lorem ipsum dolor sit amet"
-// }
-//   }
-// });
-// const updatedUserdetasils = await client.graphql({
-//   query: updateUserdetasils,
-//   variables: {
-//       input: {
-//   "email": "Lorem ipsum dolor sit amet",
-//   "username": "Lorem ipsum dolor sit amet",
-//   "password": "Lorem ipsum dolor sit amet"
-// }
-//   }
-// });
-// const deletedUserdetasils = await client.graphql({
-//   query: deleteUserdetasils,
-//   variables: {
-//       input: {
-//           id: "YOUR_RECORD_ID"
-//       }
-//   }
-// });
+  }
+`;
