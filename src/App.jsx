@@ -1,33 +1,33 @@
-import "./img.png"
-import './App.css';
-import {Amplify} from 'aws-amplify';
-import { useAuthenticator, withAuthenticator,useTheme,Text,View,Image,Authenticator } from '@aws-amplify/ui-react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '@aws-amplify/ui-react/styles.css';
-import { Auth } from "aws-amplify";
-import awsExports from './aws-exports';
-Amplify.configure(awsExports);
-function App() {
-  const {user ,signOut}= useAuthenticator();
+// import "./img.png"
+// import './App.css';
+// import {Amplify} from 'aws-amplify';
+// import { useAuthenticator, withAuthenticator,useTheme,Text,View,Image,Authenticator } from '@aws-amplify/ui-react';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import '@aws-amplify/ui-react/styles.css';
+// import { Auth } from "aws-amplify";
+// import awsExports from './aws-exports';
+// Amplify.configure(awsExports);
+// function App() {
+//   const {user ,signOut}= useAuthenticator();
  
  
-  return (
+//   return (
    
    
-    <nav className="navbar bg-dark">
-    <div className="container-fluid">
-        <span className="appName">
-            CloudXcel User Authentication {user.username}</span>
-            <button  onClick={signOut}>Sign out</button>
-    </div>
-</nav>
+//     <nav className="navbar bg-dark">
+//     <div className="container-fluid">
+//         <span className="appName">
+//             CloudXcel User Authentication {user.username}</span>
+//             <button  onClick={signOut}>Sign out</button>
+//     </div>
+// </nav>
     
     
 
-  );
-}
+//   );
+// }
 
-export default withAuthenticator(App);
+// export default withAuthenticator(App);
 // function App({ user, signOut }) {
 //   return (
 //     <div>
@@ -49,3 +49,20 @@ export default withAuthenticator(App);
 // }
 
 // export default withAuthenticator(App);
+import { Amplify } from 'aws-amplify';
+
+import { withAuthenticator } from '@aws-amplify/ui-react';
+import '@aws-amplify/ui-react/styles.css';
+import config from './amplifyconfiguration.json';
+Amplify.configure(config);
+
+function App({ signOut, user }) {
+  return (
+    <>
+      <h1>Hello {user.username}</h1>
+      <button onClick={signOut}>Sign out</button>
+    </>
+  );
+}
+
+export default withAuthenticator(App);

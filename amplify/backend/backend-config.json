@@ -87,5 +87,12 @@
         }
       ]
     }
+  },
+  "storage": {
+    "myfirstappstoreage": {
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "S3"
+    }
   }
 }
