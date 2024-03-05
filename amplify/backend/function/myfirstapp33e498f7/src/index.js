@@ -71,14 +71,14 @@ export async function handler(event, context) {
     return {
         statusCode: 200,
     //  Uncomment below to enable CORS requests
-    ...response,
+    
     
     headers: {
          "Access-Control-Allow-Origin": "*",
          "Access-Control-Allow-Headers": "*"
      },
-     body: JSON.stringify(response.body),
-        // body: JSON.stringify('Hello from Lambda!'),
+     //body: JSON.stringify(response.body),
+        body: JSON.stringify('Hello from Lambda!'),
     };
 };
   // return {
