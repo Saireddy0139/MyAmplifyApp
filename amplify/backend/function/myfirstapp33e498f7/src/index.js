@@ -20,9 +20,9 @@
 //  * @type {import('@types/aws-lambda').APIGatewayProxyHandler}
 //  */
 
-const fetch = require("node-fetch");
+import fetch from "node-fetch";
 
-exports.handler = async (event, context) => {
+export async function handler(event, context) {
   const GRAPHQL_ENDPOINT = process.env.ADD_YOUR_API_ENDPOINT;
   const GRAPHQL_API_KEY = process.env.ADD_YOUR_API_KEY;
 
@@ -71,15 +71,18 @@ exports.handler = async (event, context) => {
     return {
         statusCode: 200,
     //  Uncomment below to enable CORS requests
+    ...response,
+    
     headers: {
          "Access-Control-Allow-Origin": "*",
          "Access-Control-Allow-Headers": "*"
      },
-        body: JSON.stringify('Hello from Lambda!'),
+     body: JSON.stringify(response.body),
+        // body: JSON.stringify('Hello from Lambda!'),
     };
 };
   // return {
   //   ...response,
   //   body: JSON.stringify(response.body),
   // };
-};
+}
